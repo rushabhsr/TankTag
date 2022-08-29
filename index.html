@@ -1,0 +1,152 @@
+<html>
+  <head>
+    <title>Tank Tag</title>
+    <link rel="icon" href="tank.png" type="image/x-icon" />
+    <style type="text/css">
+      .glow {
+        font-size: 25px;
+        color: #ffffff;
+        text-align: center;
+        -webkit-animation: glow 1s ease-in-out infinite alternate;
+        -moz-animation: glow 1s ease-in-out infinite alternate;
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+      @-webkit-keyframes glow {
+        from {
+          text-shadow: 0 0 10px #eeeeee, 0 0 20px #000000, 0 0 30px #000000,
+            0 0 40px #000000, 0 0 50px #9554b3, 0 0 60px #9554b3,
+            0 0 70px #9554b3;
+        }
+        to {
+          text-shadow: 0 0 20px #eeeeee, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+            0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6,
+            0 0 80px #ff4da6;
+        }
+      }
+      .button {
+        border: none;
+        border-radius: 30px;
+        padding: 12px 20px;
+        text-align: center;
+        text-shadow: 2px 2px 5px #6a5acd;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.2s;
+        cursor: pointer;
+      }
+      .button {
+        color: white;
+        text-shadow: 2px 2px 5px #6a5acd;
+        background-image: linear-gradient(
+          to bottom left,
+          #00000f 0%,
+          #669999 100%
+        );
+        border: 2px solid #555555;
+        outline: none;
+      }
+      .button:hover {
+        color: white;
+        text-shadow: 2px 2px 5px #6a5acd;
+        background-image: linear-gradient(
+          to bottom right,
+          #00000f 0%,
+          #669999 100%
+        );
+        border: 2px solid #555555;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body
+    style="
+      background-color: #21d4fd;
+      padding-top: 40px;
+      background-image: linear-gradient(19deg, #cc33ff 0%, #6600cc 100%);
+    "
+  >
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyArj7JqmX-tiqRPodyw0SjAX9f7ZFlXJGw",
+        authDomain: "score-eebbd.firebaseapp.com",
+        databaseURL: "https://score-eebbd.firebaseio.com",
+        projectId: "score-eebbd",
+        storageBucket: "score-eebbd.appspot.com",
+        messagingSenderId: "465117060580",
+        appId: "1:465117060580:web:28fb18abd6b6578ac73bf1",
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script src="index.js"></script>
+    <div>
+      <table
+        align="center"
+        style="
+          font-size: 40px;
+          color: white;
+          text-shadow: 2px 2px 5px #6a5acd;
+          width: 900px;
+          border-radius: 300px;
+          border: 5px solid;
+          padding: 20px;
+          background-image: linear-gradient(
+            to top right,
+            #00000f 0%,
+            #669999 100%
+          );
+        "
+      >
+        <caption class="glow" style="font-size: 60px">
+          Tank Tag
+        </caption>
+        <th align="center" colspan="5">Score Board</th>
+        <tr>
+          <td></td>
+          <th align="center">Timer:</th>
+          <th align="left" id="timer">2:00</th>
+        </tr>
+        <tr>
+          <th>Tank 1</th>
+          <td align="center" colspan="3" rowspan="3">
+            <img height="250" width="300" src="tank.png" />
+          </td>
+          <th>Tank 2</th>
+        </tr>
+        <tr>
+          <th id="Tank1health">100</th>
+          <th id="Tank2health">100</th>
+        </tr>
+
+        <tr>
+          <td align="center">
+            <button class="button" id="start" onclick="start()">Start</button>
+          </td>
+          <td align="center">
+            <button class="button" id="reset" onclick="reset()">Reset</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <footer
+      style="
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 10%;
+        background-image: linear-gradient(
+          90deg,
+          rgba(111, 22, 202, 1) 13%,
+          rgba(66, 25, 133, 1) 35%,
+          rgba(36, 37, 158, 1) 94%
+        );
+        text-align: center;
+      "
+    >
+      <p class="glow">By: Aditya Gadekar, Atharva Mhatre & Rushabh Sarvaiya.</p>
+    </footer>
+  </body>
+</html>
